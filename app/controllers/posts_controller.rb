@@ -9,7 +9,7 @@ class PostsController < ApplicationController
    # end
  
   def create
-    Post.create(content: params[:content])
+    Post.create(content: params[:content],checked: false)
     redirect_to action: :index
   end
  
@@ -24,5 +24,5 @@ class PostsController < ApplicationController
     item = Post.find(params[:id])
     render json: { post: item }
   end
- end
+end
  
